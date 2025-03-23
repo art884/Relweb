@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judenhut</title>
+</head>
+<header class="header">
+    <button class="margin-right" id="open-sidebar-button" onclick="openSidebar()">☰</button>
+    Von Arthur Tidemann (10c)
+    <nav id="navbar">
+        <ul>
+            <li>
+                <button id="close-sidebar-button" onclick="closeSidebar()">✖</button>
+            </li>
+            <li class="home-li"><a href="index.html">🏠Home</a></li>
+            <li><a href="about.html">👤About</a></li>
+            <li><a href="judenhut.html">🎩Judenhut</a></li>
+            <li><a href="rouelle.html">💍Gelber Ring</a></li>
+            <li><a href="marginalisierung.html">👃Marginalisierung</a></li>
+            <li><a href="materielle_bereicherung.html">💰Materielle Bereicherung</a></li>
+            <li><a href="judensau.html">🐷Judensau</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div id="overlay" onclick="closeSidebar()"></div>
+    <p class="center-flex">
+        <h1 class="container"><b>Der Judenhut</b></h1>
+    </p>
+    <p>
+        <h2>Aussehen</h2>
+    </p>
+    <p class="center-flex">
+        Wie ein Judenhut genau aussieht ist nicht klar, denn im Laufe der Zeit veränderte sich der Judenhut in Aussehen und Material. Sein wichtigstes charakteristisches Merkmal ist das Horn, welches immer wieder beim Judenhut vorkommt.
+    </p>
+    <picture class="center-flex picture">
+        <img src="https://res.cloudinary.com/de1bn3nlh/image/upload/v1741718967/Judenh%C3%BCte_gvjlei.jpg" class="uebergang" width="50%" title="Einige Varianten des Judenhuts" />
+    </picture>
+    <p class="center-flex">
+        <h2>Geschichte</h2>
+    </p>
+    <p class="center-flex">
+        Außerhalb der Entstehung des Judenhuts und der freiwilligen Entscheidung den Judenhut zu tragen, wurde der Judenhut 1215 zum zwangsweise getragenen Stigma der Juden. Das hatte damals der Papst im vierten Laterkonzil von 1215 gefordert, weil er wollte, dass Muslime & Juden durch bestimmte Kennzeichen in der Öffentlichkeit erkennbar sind.
+    </p>
+</body>
+<footer>
+</footer>
+<style>
+    @media(max-width: 520px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            background-color: rgba(20, 20, 55, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            color: white;
+            font-size: 12px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .uebergang{
+            box-shadow: 0 0 5px 5px white;
+        }
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 15px;
+        }
+
+        .white-box {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: white;
+            border-radius: 15px;
+            font-size: 5px;
+        }
+
+        open-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        close-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 100;
+        }
+    }
+
+    @media(max-width: 770px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            background-color: rgba(20, 20, 55, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            font-size: 15px;
+            color: white;
+            margin: 15px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .uebergang {
+            box-shadow: 0 0 5px 5px white;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 25px;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 20px;
+            display: flex;
+            z-index: 100;
+        }
+    }
+
+    @media(min-width: 771px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            background-color: rgba(20, 20, 55, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            font-size: 20px;
+            color: white;
+            margin: 5px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .uebergang {
+            box-shadow: 0 0 7px 7px white;
+        }
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(1.5);
+            }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            margin: 20px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 35px;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 25px;
+            z-index: 100;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".picture img").forEach(img => {
+            img.addEventListener("click", function () {
+                let url = this.getAttribute("data-link");
+                if (url) {
+                    window.location.href = url; // Seite wechseln
+                }
+            });
+        });
+    });
+    function openSidebar() {
+        document.getElementById('navbar').classList.add('show');
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function closeSidebar() {
+        document.getElementById('navbar').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+</html>

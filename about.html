@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt von Arthur (10c)</title>
+</head>
+<header class="header">
+    <button class="margin-right" id="open-sidebar-button" onclick="openSidebar()">☰</button>
+    Von Arthur Tidemann (10c)
+    <nav id="navbar">
+        <ul>
+            <li>
+                <button id="close-sidebar-button" onclick="closeSidebar()">✖</button>
+            </li>
+            <li class="home-li"><a href="index.html">🏠Home</a></li>
+            <li><a href="about.html">👤About</a></li>
+            <li><a href="judenhut.html">🎩Judenhut</a></li>
+            <li><a href="rouelle.html">💍Gelber Ring</a></li>
+            <li><a href="marginalisierung.html">👃Marginalisierung</a></li>
+            <li><a href="materielle_bereicherung.html">💰Materielle Bereicherung</a></li>
+            <li><a href="judensau.html">🐷Judensau</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div id="overlay" onclick="closeSidebar()"></div>
+    <p class="center-flex">
+        <h1 class="container"><b>Antisemitische Merkmale in der Kunst des Mittelalters</b></h1>
+    </p>
+    <p class="center-flex">
+        Diese Website dient dazu über antisemitische Merkmale auf Kunstwerken des Mittelalters zu informieren.
+        Unten auf dieser Website können Sie ein Quiz finden und ihre Kenntnisse auf antisemitische Merkmale auf Kunstwerken des Mittelalters prüfen.
+    </p>
+    <p class="center-flex">
+        _____________________________
+    </p>
+    <p class="center-flex">
+        Klicken Sie auf eines Bilder um über ein antisemitisches Merkmal mehr zu erfahren...
+    </p>
+    <picture class="center-flex picture">
+        <br>
+        <img src="https://wargearshop.com/wp-content/uploads/2021/02/c6zypleor0-png-768x768.png" data-link="judenhut.html" height="100" title="Der Judenhut" />
+        <img src="https://th.bing.com/th/id/R.eaffd930735a4d2ec1c4632a6764b4ba?rik=6Oz%2fVf3%2bwAQzVA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f6%2fRing-Transparent-PNG.png&ehk=SB%2b12cQoGSQ8Fy6SL3v83UsLTe78KPxRQGou34l3lcU%3d&risl=&pid=ImgRaw&r=0" data-link="rouelle.html" height="100" title="Der gelbe Ring" />
+        </br>
+        <img src="https://www.pngarts.com/files/11/Human-Body-Free-PNG-Image.png" data-link="marginalisierung.html" height="100" title="Körperliche Marginalisierung" />
+        <img src="https://pngimg.com/uploads/coin/coin_PNG36888.png" data-link="materielle_bereicherung.html" alt="Coin PNG image transparent image download" height="100" title="Materielle Bereicherung" />
+        <img src="https://th.bing.com/th/id/R.a694495fc0ed9e75c72dbf94801bc452?rik=aLa9FQ%2fNqBXktQ&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2f91508356848igp3ifysfpebdwxxxcbrm2t71fx7kqracfrenidvwcvmhle3h8s7dbrif5r9dcncv48hgexexay8wxuqiwadqzyqrir4pgdk39gi.png&ehk=%2fHszOxCwOFtY3MW6NZQAe%2ffaGG9HEbh72g%2bDj6d4Jyo%3d&risl=&pid=ImgRaw&r=0" data-link="judensau.html" height="100" title=" Die Judensau" />
+    </picture>
+    <div class="center-flex">
+        <h2><u>Motiv des Judenhasses im Mittelalter</u></h2>
+    </div>
+    <picture class="center-flex picture">
+    </picture>
+    <p class="center-flex">
+        Die Bilder in dieser Website stellen Kunstwerke von Christen da, die das Hassmotiv hatten, dass Juden für den Tod Jesu verantwortlich seien.
+
+    </p>
+    <div class="center-flex">
+        <h2><u>Quiz</u></h2>
+    </div>
+</body>
+<footer>
+</footer>
+<style>
+    @media(max-width: 520px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            background-color: rgba(20, 20, 55, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            color: white;
+            font-size: 12px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .margin-right{
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 15px;
+        }
+
+        open-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        close-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 100;
+        }
+    }
+
+    @media(max-width: 770px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            background-color: rgba(20, 20, 55, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            font-size: 15px;
+            color: white;
+            margin: 15px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 25px;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 20px;
+            display: flex;
+            z-index: 100;
+        }
+    }
+
+    @media(min-width: 771px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            background-color: rgba(20, 20, 55, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            font-size: 20px;
+            color: white;
+            margin: 5px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(1.5);
+            }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            margin: 20px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 35px;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 25px;
+            z-index: 100;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".picture img").forEach(img => {
+            img.addEventListener("click", function () {
+                let url = this.getAttribute("data-link");
+                if (url) {
+                    window.location.href = url; // Seite wechseln
+                }
+            });
+        });
+    });
+    function openSidebar() {
+        document.getElementById('navbar').classList.add('show');
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function closeSidebar() {
+        document.getElementById('navbar').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+</html>
