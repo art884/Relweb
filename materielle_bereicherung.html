@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materielle Bereicherung</title>
+</head>
+<header class="header">
+    <button class="margin-right" id="open-sidebar-button" onclick="openSidebar()">☰</button>
+    Von Arthur Tidemann (10c)
+    <nav id="navbar">
+        <ul>
+            <li>
+                <button id="close-sidebar-button" onclick="closeSidebar()">✖</button>
+            </li>
+            <li class="home-li"><a href="index.html">🏠Home</a></li>
+            <li><a href="about.html">👤About</a></li>
+            <li><a href="judenhut.html">🎩Judenhut</a></li>
+            <li><a href="rouelle.html">💍Gelber Ring</a></li>
+            <li><a href="marginalisierung.html">👃Marginalisierung</a></li>
+            <li><a href="materielle_bereicherung.html">💰Materielle Bereicherung</a></li>
+            <li><a href="judensau.html">🐷Judensau</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div id="overlay" onclick="closeSidebar()"></div>
+    <p class="center-flex">
+        <h1 class="container"><b>„Materielle Bereicherung” der Juden</b></h1>
+    </p>
+    <p>
+        <h2>Die wohlhabenden Juden</h2>
+    </p>
+    <p class="center-flex">
+        Im Mittelalter waren Juden zunächst(im 8. und 9. Jahrhundert) als Ärzte und Händler beschäftigt. 
+        Dazu standen sie unter königlichem Schutz, was Christen neidisch machte. Ab dem 9. und 10. Jahrhundert
+        wurden Juden in Berufung und Besitz beschränkt. Sie wurden von Kaufmannsgilden ausgeschlossen und beim 
+        Handel auf Klein oder Trödelhandel beschränkt. Sie durften kein Grundbesitz mehr haben(z.B. für Ackerland).
+    </p>
+    <p class="center-flex">
+        <h2>Juden als Geldverleiher</h2>
+    </p>
+    <p class="center-flex">
+        Da den Juden jegliche Freiheit in der Berufung genommen wurde, wurden sie <u>Geldverleiher</u>. Der Beruf des Geldverleihers
+        war bei Christen aufgrund des Zinsnehmen, die das Christentum im Mittelalter als Sünde betrachtete, nicht ausführbar. Beleg hierfür lässt sich 
+        beispielsweise im 5. Buch von Mose finden(23,20-21):
+    </p>
+    <p class="center-flex">
+        <i>„Du sollst von deinem Bruder keinen Zins nehmen, weder Zins für Geld noch für Speise noch für irgendetwas, das verzinst wird.”</i><br />
+        -> Christen sollen nie Zinsen nehmen.
+    </p>
+    <p class="center-flex">
+        Deshalb führten Juden den Beruf des Geldverleihers aus und waren erfolgreich. Christen waren neidisch auf den Erfolg und entwickelten, vermutlich
+        auch aus dem Hintergrundwissen, dass das Zinsnehmen im Christentum eine Sünde ist, den Vorwurf, dass Juden geldgierige Wucherer seien.
+    </p><br />
+    <br />
+    <picture class="center-flex">
+        <img src="https://www.meisterdrucke.de/kunstwerke/1260px/Quentin_Massys_or_Metsys_-_The_Moneylender_and_his_Wife_-_%28MeisterDrucke-790489%29.jpg" title="Der Geldverleiher, 1512" width="100%" />
+        <div>
+            <u>Der Geldverleiher(1512)</u>
+        </div>
+    </picture><br />
+    <br />
+    <p class="center-flex">
+        Das Bild „Der Geldverleiher”(1512), von Quentin Massys, stellt einen Mann und eine Frau dar. Der Mann wiegt Münzen ab, was üblich zur Zeit des Mittelalters
+        war um den Wert der Münze anhand Gewicht und Material festzusetzen. Dies lässt vermuten, dass der Mann ein Geldverleiher darstellen soll, da das eine Tätigkeit
+        ist, die Geldverleiher tätigen und das Thema Geldverleiher zu der Zeit aktuell war. 
+    </p>
+    <p class="center-flex">
+        Der Geldverleiher könnte ein Christ sein, weil man an der Reflexion eines Spiegels im Vordergrund ein Kreuz erkennen kann. Das wurde jedoch nicht von jedem erkannt, 
+        weil nicht jeder dieses Detail entdeckte und somit den Mann als Juden abstempelte.
+    </p>
+</body>
+<footer>
+</footer>
+<style>
+    @media(max-width: 520px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            padding: 25%;
+            background-color: rgba(35, 35, 75, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            color: white;
+            font-size: 12px;
+            margin: 10px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .uebergang {
+            box-shadow: 0 0 5px 5px white;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 15px;
+        }
+
+        .white-box {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: white;
+            border-radius: 15px;
+            font-size: 5px;
+        }
+
+        open-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        close-sidebar-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 100;
+        }
+    }
+
+    @media(max-width: 770px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            padding: 25%;
+            background-color: rgba(35, 35, 75, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            font-size: 15px;
+            color: white;
+            margin: 15px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .uebergang {
+            box-shadow: 0 0 5px 5px white;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(2);
+            }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 25px;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 20px;
+            display: flex;
+            z-index: 100;
+        }
+    }
+
+    @media(min-width: 771px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Fixiert die Ausrichtung oben */
+            padding: 25%;
+            background-color: rgba(35, 35, 75, 100);
+            font-family: Bahnschrift;
+            font-weight: 500;
+            font-size: 20px;
+            color: white;
+            margin: 5px;
+            height: auto;
+            flex-direction: column;
+            padding-top: 110px; /* Gibt Platz für den Header */
+        }
+
+        .uebergang {
+            box-shadow: 0 0 7px 7px white;
+        }
+
+        .margin-right {
+            margin-right: auto;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+            z-index: 9; /* Muss unter der Sidebar liegen */
+            display: none; /* Standardmäßig unsichtbar */
+        }
+
+        /* Zeige das Overlay, wenn die Sidebar offen ist */
+        nav.show + #overlay {
+            display: block;
+        }
+
+        #open-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: min(15em, 100%);
+            background-color: rgba(4, 4, 30, 100);
+            transition: right 0.3s ease-in-out;
+            z-index: 200;
+        }
+
+            nav.show {
+                right: 0;
+                background-color: rgba(20, 20, 55, 100);
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                display: flex;
+                padding: 5px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: rgba(150, 150, 255, 100);
+            }
+
+                nav a:hover {
+                    color: white;
+                    background-color: rgba(150, 150, 255, 100);
+                }
+
+        #close-sidebar-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .center-flex {
+            display: block;
+            text-align: center;
+        }
+
+        .picture img {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+            .picture img:hover {
+                filter: brightness(1.5);
+            }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            margin: 20px;
+            height: auto;
+            width: 50%;
+            background-color: rgba(4, 4, 30, 100);
+            border-radius: 15px;
+            font-size: 35px;
+        }
+
+        .header {
+            position: fixed; /* Fixiert den Header oben */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(4, 4, 30, 100);
+            font-size: 25px;
+            z-index: 100;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".picture img").forEach(img => {
+            img.addEventListener("click", function () {
+                let url = this.getAttribute("data-link");
+                if (url) {
+                    window.location.href = url; // Seite wechseln
+                }
+            });
+        });
+    });
+    function openSidebar() {
+        document.getElementById('navbar').classList.add('show');
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function closeSidebar() {
+        document.getElementById('navbar').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+</html>
